@@ -4,3 +4,29 @@ description:        這是我的個人部落格，記錄我的想法和經驗
 author:             你的名字
 baseurl:            ""
 url:                "https://你的用戶名.github.io"
+
+# 社交媒體連結
+twitter_username:   
+github_username:    你的GitHub用戶名
+facebook_username:  
+instagram_username:  
+linkedin_username:  
+
+# 添加讀取時間功能
+read_time:          true
+words_per_minute:   200
+
+# 添加相關文章功能
+related_posts:       true
+
+# 添加谷歌分析 (可選)
+# google_analytics:   UA-XXXXXXXXX-X
+
+# 構建設置
+markdown:           kramdown
+paginate:           5
+paginate_path:      "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
