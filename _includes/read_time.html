@@ -1,0 +1,6 @@
+{% assign words = include.content | strip_html | number_of_words %}
+{% if words < 180 %}
+  1 分鐘閱讀
+{% else %}
+  {{ words | divided_by:site.words_per_minute }} 分鐘閱讀
+{% endif %}
