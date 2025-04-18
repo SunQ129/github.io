@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<!-- 頁面頭部 -->
+<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl }}')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          <h1>{{ page.title }}</h1>
+          {% if page.subtitle %}
+          <h2 class="subheading">{{ page.subtitle }}</h2>
+          {% endif %}
+          <span class="meta">
+            {{ page.date | date: '%Y年%m月%d日' }} &middot; 
+            {% if page.author %}
+              {{ page.author }}
+            {% else %}
+              {{ site.author }}
+            {% endif %}
+            {% if site.read_time %}
+              &middot; {% include read_time.html content=page.content %}
+            {% endif %}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 文章內容 -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr>
+
+<!-- 相關文章 -->
+{% if site.related_posts %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h3>你可能也會喜歡</h3>
+      <ul>
+        {% for post in site.related_posts limit:3 %}
+        <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endif %}
